@@ -97,3 +97,25 @@ function omikuji() {
         });
 }
 
+function monster() {
+    var Monster = ncmb.DataStore("monster");
+
+    Monster.fetchAll()
+        .then(function (objects) {
+            /* 取得成功時の処理 */
+            // データ数内で乱数を作成
+            var random = Math.floor(Math.random() * objects.length);
+            // 乱数番目のデータ
+            var object = objects[random];
+            // 「name」フィールドの値を取得
+            var result = object.get("name");
+            var level = object.get("level");
+            // 画面に結果を表示
+            document.getElementById("name").innerText = result;
+            document.getElementById("level").innerText = level;
+        })
+        .catch(function (error) {
+            /* 取得失敗時の処理 */
+            alert("Error: " + error.code);
+        });
+}
