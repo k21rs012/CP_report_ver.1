@@ -110,9 +110,13 @@ function monster() {
             // 「name」フィールドの値を取得
             var result = object.get("name");
             var level = object.get("level");
+            var attack = object.get("attack");
+            var defence = object.get("defence");
             // 画面に結果を表示
             document.getElementById("name").innerText = result;
             document.getElementById("level").innerText = level;
+            document.getElementById("attack").innerText = attack;
+            document.getElementById("defence").innerText = defence;
         })
         .catch(function (error) {
             /* 取得失敗時の処理 */
