@@ -168,7 +168,10 @@ function duel() {
     console.log(dfB);
 
     var hpA = dfA - atkB;
-    var hpB = dfB - atkB;
+    var hpB = dfB - atkA;
+
+    console.log(hpA);
+    console.log(hpB);
 
     if (hpA > hpB) {
         document.getElementById("kekka").innerText = "Aの勝ちです。";
