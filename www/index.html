@@ -57,11 +57,23 @@
 
             <button onclick="omikuji();">おみくじを引く</button> 結果：
             <span id="result"></span>
-            <button onclick="monster();">Aがモンスターを召喚</button>結果：
-            <span id="name"></span></br>level:
-            <span id="level"></span></br>attack:
-            <span id="attack"></span></br>defence:
-            <span id="defence"></span>
+            <button onclick="monsterA();">Aがモンスターを召喚</button>monster name:
+            <span id="nameA"></span></br>level:
+            <span id="levelA"></span></br>attack:
+            <span id="attackA"></span></br>defence:
+            <span id="defenceA"></span>
+
+            <button onclick="monsterB();">Bがモンスターを召喚</button>monster name:
+            <span id="nameB"></span></br>level:
+            <span id="levelB"></span></br>attack:
+            <span id="attackB"></span></br>defence:
+            <span id="defenceB"></span>
+
+            </br>
+            <h2>A vs B</h2>
+            <button onclick="duel();">勝負</button>result:
+            <span id="kekka"></span>
+
 
             <!--Dialog box confirming logout-->
             <div data-role="popup" id="yesNoDialog_logout" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">

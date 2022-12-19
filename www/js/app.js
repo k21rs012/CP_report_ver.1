@@ -97,7 +97,12 @@ function omikuji() {
         });
 }
 
-function monster() {
+var atkA = 0;
+var dfA = 0;
+var atkB = 0;
+var dfB = 0;
+
+function monsterA() {
     var Monster = ncmb.DataStore("monster");
 
     Monster.fetchAll()
@@ -108,18 +113,68 @@ function monster() {
             // 乱数番目のデータ
             var object = objects[random];
             // 「name」フィールドの値を取得
-            var result = object.get("name");
-            var level = object.get("level");
-            var attack = object.get("attack");
-            var defence = object.get("defence");
+            atkA = object.get("attack");
+            dfA = object.get("defence");
+            var resultA = object.get("name");
+            var levelA = object.get("level");
+            var attackA = object.get("attack");
+            var defenceA = object.get("defence");
             // 画面に結果を表示
-            document.getElementById("name").innerText = result;
-            document.getElementById("level").innerText = level;
-            document.getElementById("attack").innerText = attack;
-            document.getElementById("defence").innerText = defence;
+            document.getElementById("nameA").innerText = resultA;
+            document.getElementById("levelA").innerText = levelA;
+            document.getElementById("attackA").innerText = attackA;
+            document.getElementById("defenceA").innerText = defenceA;
+            return { attackA: attackA };
         })
         .catch(function (error) {
             /* 取得失敗時の処理 */
             alert("Error: " + error.code);
         });
+}
+
+function monsterB() {
+    var Monster = ncmb.DataStore("monster");
+
+    Monster.fetchAll()
+        .then(function (objects) {
+            /* 取得成功時の処理 */
+            // データ数内で乱数を作成
+            var random = Math.floor(Math.random() * objects.length);
+            // 乱数番目のデータ
+            var object = objects[random];
+            // 「name」フィールドの値を取得
+            atkB = object.get("attack");
+            dfB = object.get("defence");
+            var resultB = object.get("name");
+            var levelB = object.get("level");
+            var attackB = object.get("attack");
+            var defenceB = object.get("defence");
+            // 画面に結果を表示
+            document.getElementById("nameB").innerText = resultB;
+            document.getElementById("levelB").innerText = levelB;
+            document.getElementById("attackB").innerText = attackB;
+            document.getElementById("defenceB").innerText = defenceB;
+        })
+        .catch(function (error) {
+            /* 取得失敗時の処理 */
+            alert("Error: " + error.code);
+        });
+}
+
+function duel() {
+    console.log(atkA);
+    console.log(dfA);
+    console.log(atkB);
+    console.log(dfB);
+
+    var hpA = dfA - atkB;
+    var hpB = dfB - atkB;
+
+    if (hpA > hpB) {
+        document.getElementById("kekka").innerText = "Aの勝ちです。";
+    } else if (hpA < hpB) {
+        document.getElementById("kekka").innerText = "Bの勝ちです。";
+    } else {
+        document.getElementById("kekka").innerText = "引き分けです。";
+    }
 }
