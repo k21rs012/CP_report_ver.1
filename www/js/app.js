@@ -1,5 +1,4 @@
-var appKey    = "YOUR_APPKEY";
-var clientKey = "YOUR_CLIENTKEY";
+
 
 var ncmb = new NCMB(appKey, clientKey);
 
