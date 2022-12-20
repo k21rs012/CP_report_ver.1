@@ -167,8 +167,26 @@ function duel() {
     console.log(atkB);
     console.log(dfB);
 
-    var hpA = dfA - atkB;
-    var hpB = dfB - atkA;
+    var hpA = 0;
+    var hpB = 0;
+
+    if ((dfA - atkB) >= 0) {
+        var hpA = 8000;
+        var hpB = 8000 + (dfB - atkA);
+    } else if ((dfB - atkA) >= 0) {
+        var hpA = 8000 + (dfA - atkB);
+        var hpB = 8000;
+    } else if (atkA == atkB && dfA == dfB) {
+        var hpA = 8000 + (dfA - atkB);
+        var hpB = 8000 + (dfB - atkA);
+    }else{
+        var hpA = 8000 - (dfA - atkB);
+        var hpB = 8000 - (dfB - atkA);
+    }
+
+    //DFが大きかった場合の対処
+    //var hpA = 8000 - (dfA - atkB);
+    //var hpB = 8000 - (dfB - atkA);
 
     console.log(hpA);
     console.log(hpB);
