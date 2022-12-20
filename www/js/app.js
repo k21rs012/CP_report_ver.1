@@ -124,7 +124,6 @@ function monsterA() {
             document.getElementById("levelA").innerText = levelA;
             document.getElementById("attackA").innerText = attackA;
             document.getElementById("defenceA").innerText = defenceA;
-            return { attackA: attackA };
         })
         .catch(function (error) {
             /* 取得失敗時の処理 */
@@ -180,8 +179,8 @@ function duel() {
         var hpA = 8000 + (dfA - atkB);
         var hpB = 8000 + (dfB - atkA);
     }else{
-        var hpA = 8000 - (dfA - atkB);
-        var hpB = 8000 - (dfB - atkA);
+        var hpA = 8000 + (dfA - atkB);
+        var hpB = 8000 + (dfB - atkA);
     }
 
     //DFが大きかった場合の対処
