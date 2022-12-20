@@ -173,6 +173,9 @@ function duel() {
     console.log(hpA);
     console.log(hpB);
 
+    document.getElementById("hpA").innerText = hpA;
+    document.getElementById("hpB").innerText = hpB;
+
     if (hpA > hpB) {
         document.getElementById("kekka").innerText = "Aの勝ちです。";
     } else if (hpA < hpB) {
