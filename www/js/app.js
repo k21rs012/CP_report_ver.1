@@ -168,7 +168,8 @@ function duel() {
 
     var hpA = 0;
     var hpB = 0;
-
+    
+    
     if ((dfA - atkB) >= 0) {
         var hpA = 8000;
         var hpB = 8000 + (dfB - atkA);
@@ -190,8 +191,7 @@ function duel() {
     console.log(hpA);
     console.log(hpB);
 
-    document.getElementById("hpA").innerText = hpA;
-    document.getElementById("hpB").innerText = hpB;
+    
 
     if (hpA > hpB) {
         document.getElementById("kekka").innerText = "Aの勝ちです。";
@@ -200,4 +200,21 @@ function duel() {
     } else {
         document.getElementById("kekka").innerText = "引き分けです。";
     }
+
+    if(atkA == ''){
+        document.getElementById("kekka").innerText = "Aのモンスターを召喚してください。";
+        var hpA = '';
+    }
+    if(atkB == ''){
+        document.getElementById("kekka").innerText = "Bのモンスターを召喚してください。";
+        var hpB = '';
+    }
+    if(atkA == '' && atkB == ''){
+        document.getElementById("kekka").innerText = "A,B両方のモンスターを召喚してください。";
+        var hpA = '';
+        var hpB = '';
+    }
+
+    document.getElementById("hpA").innerText = hpA;
+    document.getElementById("hpB").innerText = hpB;
 }
