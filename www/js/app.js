@@ -163,6 +163,7 @@ function monsterB() {
 function duel() {
     var hpA = 0;
     var hpB = 0;
+    var result;
 
     if ((dfA - atkB) >= 0) {
         var hpA = 8000;
@@ -170,33 +171,26 @@ function duel() {
     } else if ((dfB - atkA) >= 0) {
         var hpA = 8000 + (dfA - atkB);
         var hpB = 8000;
-    } else{
+    } else {
         var hpA = 8000 + (dfA - atkB);
         var hpB = 8000 + (dfB - atkA);
     }
 
     if (hpA > hpB) {
-        document.getElementById("kekka").innerText = "Aの勝ちです。";
+        result = "Aの勝ちです。";
     } else if (hpA < hpB) {
-        document.getElementById("kekka").innerText = "Bの勝ちです。";
+        result = "Bの勝ちです。";
     } else {
-        document.getElementById("kekka").innerText = "引き分けです。";
+        result = "引き分けです。";
     }
 
-    if (atkA == '') {
-        document.getElementById("kekka").innerText = "Aのモンスターを召喚してください。";
-        var hpA = '';
-    }
-    if (atkB == '') {
-        document.getElementById("kekka").innerText = "Bのモンスターを召喚してください。";
-        var hpB = '';
-    }
-    if (atkA == '' && atkB == '') {
-        document.getElementById("kekka").innerText = "A,B両方のモンスターを召喚してください。";
+    if (atkA == '' || atkB == '') {
+        result = "A,B両方のモンスターを召喚してください。";
         var hpA = '';
         var hpB = '';
     }
 
+    document.getElementById("kekka").innerText = result;
     document.getElementById("hpA").innerText = hpA;
     document.getElementById("hpB").innerText = hpB;
 }
