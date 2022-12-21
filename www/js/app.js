@@ -161,8 +161,8 @@ function monsterB() {
 }
 
 function duel() {
-    var hpA = 0;
-    var hpB = 0;
+    var hpA = 8000 + (dfA - atkB);
+    var hpB = 8000 + (dfB - atkA);
     var result = '';
 
     if ((dfA - atkB) >= 0) {
@@ -171,9 +171,6 @@ function duel() {
     } else if ((dfB - atkA) >= 0) {
         hpA = 8000 + (dfA - atkB);
         hpB = 8000;
-    } else {
-        hpA = 8000 + (dfA - atkB);
-        hpB = 8000 + (dfB - atkA);
     }
 
     result = hpA > hpB ? "Aの勝ちです。" : hpA < hpB ? "Bの勝ちです。" : "引き分けです。";
