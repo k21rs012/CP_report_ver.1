@@ -190,7 +190,7 @@ function duel() {
         hpB = '';
     }
 
-    document.getElementById("kekka").innerText = result;
+    document.getElementById("results").innerText = result;
     document.getElementById("hpA").innerText = hpA;
     document.getElementById("hpB").innerText = hpB;
 }
