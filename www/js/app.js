@@ -161,9 +161,9 @@ function monsterB() {
 }
 
 function duel() {
-    var hpA;
-    var hpB;
-    var result;
+    var hpA = 0;
+    var hpB = 0;
+    var result = '';
 
     if ((dfA - atkB) >= 0) {
         hpA = 8000;
@@ -176,13 +176,7 @@ function duel() {
         hpB = 8000 + (dfB - atkA);
     }
 
-    if (hpA > hpB) {
-        result = "Aの勝ちです。";
-    } else if (hpA < hpB) {
-        result = "Bの勝ちです。";
-    } else {
-        result = "引き分けです。";
-    }
+    result = hpA > hpB ? "Aの勝ちです。" : hpA < hpB ? "Bの勝ちです。" : "引き分けです。";
 
     if (atkA == '' || atkB == '') {
         result = "A,B両方のモンスターを召喚してください。";
