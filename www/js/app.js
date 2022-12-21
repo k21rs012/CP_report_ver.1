@@ -161,19 +161,19 @@ function monsterB() {
 }
 
 function duel() {
-    var hpA = 0;
-    var hpB = 0;
+    var hpA;
+    var hpB;
     var result;
 
     if ((dfA - atkB) >= 0) {
-        var hpA = 8000;
-        var hpB = 8000 + (dfB - atkA);
+        hpA = 8000;
+        hpB = 8000 + (dfB - atkA);
     } else if ((dfB - atkA) >= 0) {
-        var hpA = 8000 + (dfA - atkB);
-        var hpB = 8000;
+        hpA = 8000 + (dfA - atkB);
+        hpB = 8000;
     } else {
-        var hpA = 8000 + (dfA - atkB);
-        var hpB = 8000 + (dfB - atkA);
+        hpA = 8000 + (dfA - atkB);
+        hpB = 8000 + (dfB - atkA);
     }
 
     if (hpA > hpB) {
@@ -186,8 +186,8 @@ function duel() {
 
     if (atkA == '' || atkB == '') {
         result = "A,B両方のモンスターを召喚してください。";
-        var hpA = '';
-        var hpB = '';
+        hpA = '';
+        hpB = '';
     }
 
     document.getElementById("kekka").innerText = result;
