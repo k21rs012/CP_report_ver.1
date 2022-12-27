@@ -167,9 +167,7 @@ function duel() {
 
     if ((dfA - atkB) >= 0) {
         hpA = 8000;
-        hpB = 8000 + (dfB - atkA);
     } else if ((dfB - atkA) >= 0) {
-        hpA = 8000 + (dfA - atkB);
         hpB = 8000;
     }
 
