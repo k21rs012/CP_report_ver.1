@@ -59,6 +59,6 @@ if ((dfA - atkB) >= 0) {
 ```
 
 
-## 今回レポートを作成するにあたって参考にさせていただいたプログラムや資料
+## 最終課題を作成するにあたって参考にさせていただいたプログラムや資料
 - サンプル＆チュートリアル一覧 アプリにログイン機能をつけよう！,ニフクラ mobile backend,[https://github.com/NIFCLOUD-mbaas/monaca_login_template](https://github.com/NIFCLOUD-mbaas/monaca_login_template),閲覧 2022/12/19  
 - はじめての Monaca と mobile backend ～DBの使い方練習～,富士通クラウドテクノロジーズ株式会社,[https://qiita.com/natsumo/items/d278c71c0211a7902767](https://qiita.com/natsumo/items/d278c71c0211a7902767),閲覧 2022/12/19
